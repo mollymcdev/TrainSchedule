@@ -25,16 +25,6 @@ $(document).ready(function () {
 
         var snapshot = snapshot.val();
 
-        /*
-
-        var convertedTrainTime = moment(trainTime).format('HH:mm');
-
-        nextArrival = moment(trainTime).add(frequency, 'm');
-        var convertedNextArrival = nextArrival.format('HH:mm');
-        console.log(convertedNextArrival); 
-
-        minsAway = moment(nextArrival).fromNow();*/
-
 
         var tableRow = $("<tr>");
         var trainNameRow = $("<td>").text(snapshot.trainName);
@@ -55,20 +45,18 @@ $(document).ready(function () {
         event.preventDefault();
 
         trainName = $("#trainName").val().trim();
-        //console.log(trainName);
+        console.log(trainName);
         destination = $("#destination").val().trim();
-        //console.log(destination);
+        console.log(destination);
         trainTime = $("#trainTime").val().trim();
-        //console.log(trainTime);
+        console.log(trainTime);
         frequency = $("#frequency").val().trim();
-        //console.log(frequency);
+        console.log(frequency);
 
-        var today = moment()//.format('MMMM Do YYYY, HH:mm');
+        var today = moment().format('MMMM Do YYYY, HH:mm');
         console.log(today);
 
         var firstTrainTime = moment(trainTime, 'MMM Do YYYY, HH:mm');
-
-        firstTrainTime.set('date', 1);
 
         console.log(firstTrainTime); 
 
@@ -82,7 +70,7 @@ $(document).ready(function () {
             destination: destination,
             frequency: frequency,
             nextArrival: nextArrival.format('HH:mm'),
-            // minsAway: minsAway
+            //minsAway: minsAway
 
 
         });
